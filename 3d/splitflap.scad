@@ -467,24 +467,29 @@ module front_tabs_negative(upper, tool_diameter=undef) {
 
             // Dog-bones
             if (!is_undef(tool_diameter)) {
+                // Dog-bones are rendered as squares to simplify the number of lines in the final SVG output
                 translate([(front_tab_width + enclosure_tab_clearance)/2 - tool_diameter_param/2, (cutout_height + enclosure_tab_clearance)/2]) {
-                    circle(d=tool_diameter_param, $fn=30);
+                    square([tool_diameter_param, tool_diameter_param], center=true);
                 }
                 translate([(front_tab_width + enclosure_tab_clearance)/2 - tool_diameter_param/2, -(cutout_height + enclosure_tab_clearance)/2]) {
-                    circle(d=tool_diameter_param, $fn=30);
+                    square([tool_diameter_param, tool_diameter_param], center=true);
                 }
                 translate([-(front_tab_width + enclosure_tab_clearance)/2 + tool_diameter_param/2, (cutout_height + enclosure_tab_clearance)/2]) {
-                    circle(d=tool_diameter_param, $fn=30);
+                    square([tool_diameter_param, tool_diameter_param], center=true);
                 }
                 translate([-(front_tab_width + enclosure_tab_clearance)/2 + tool_diameter_param/2, -(cutout_height + enclosure_tab_clearance)/2]) {
-                    circle(d=tool_diameter_param, $fn=30);
+                    square([tool_diameter_param, tool_diameter_param], center=true);
                 }
             }
         }
     }
     for (i = [0 : num_front_tabs-2]) {
         translate([thickness + (i*2+1.5) * front_tab_width, 0, 0]) {
-            circle(r=m4_hole_diameter/2, $fn=30);
+            if (is_undef(tool_diameter)) {
+                circle(r=m4_hole_diameter/2, $fn=30);
+            } else {
+                square([m4_hole_diameter, m4_hole_diameter], center=true);
+            }
         }
     }
 }
