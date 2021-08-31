@@ -74,9 +74,9 @@ spool_horizontal_explosion = lookup(spool_explosion, [
 // Remember: it's better to underestimate (looser fit) than overestimate (no fit)
 kerf_width = 0.2 - 0.02;
 
-// MDF, .120in nominal
-// https://www.ponoko.com/materials/mdf-fiberboard
-thickness = 3.0;
+// MDF, 4mm
+// https://sph.ethz.ch/product/mdf-4mm/
+thickness = 4.0;
 
 etch_depth = 0.1;  // for render
 eps=.01;
