@@ -36,7 +36,7 @@ render_3d = true;
 render_enclosure = 2; // 0=invisible; 1=translucent; 2=opaque color;
 render_flaps = 2; // 0=invisible; 1=front flap only; 2=all flaps
 render_flap_area = 0; // 0=invisible; 1=collapsed flap exclusion; 2=collapsed+extended flap exclusion
-render_letters = "☀  17°";
+render_letters = "44";
 render_units = len(render_letters);
 render_unit_separation = 0;
 render_spool = true;
@@ -126,7 +126,7 @@ spool_retaining_clearance = 0.10;  // for the notches in the spool retaining wal
 spool_joint_clearance = 0.10;  // for the notched joints on the spool struts
 
 
-num_flaps = 48;
+num_flaps = 40;
 
 flap_hole_radius = (flap_pin_width + 1) / 2;
 flap_hole_separation = 1;  // additional spacing between hole edges
